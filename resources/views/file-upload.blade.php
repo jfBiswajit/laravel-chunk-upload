@@ -35,7 +35,7 @@
             {{-- !INFO: Progress bar --}}
             <div class="progress mt-2">
                 <div class="progress-bar progress-bar-striped bg-success progress-bar-animated" role="progressbar"
-                    style="width: 40%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                    style="width: 90%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">90%</div>
             </div>
 
             {{-- !INFO: Show video preview --}}
