@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -26,3 +27,11 @@ Route::middleware([
         return view('dashboard');
     })->name('dashboard');
 });
+
+Route::get('/file-upload', function() {
+    return view('file-upload');
+});
+
+Route::post('/file-upload', function(Request $request) {
+    dd($request->all());
+})->name('store.upload');
