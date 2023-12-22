@@ -34,4 +34,4 @@ Route::get('/file-upload', function() {
 
 Route::post('/file-upload', function(Request $request) {
     dd($request->all());
-})->name('store.upload');
+})->name('file.store');

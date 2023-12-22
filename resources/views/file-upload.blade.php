@@ -12,6 +12,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/resumable.js/1.1.0/resumable.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Acme&family=Great+Vibes&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="{{ asset('app.css') }}">
@@ -25,10 +27,10 @@
             <h4 class="text-center font-great-vibes">Get Chunky, Upload Happy</h4>
 
             {{-- !INFO: Select file --}}
-            <form enctype="multipart/form-data" method="POST" action="{{ route('store.upload') }}">
+            <form">
                 @csrf
                 <div class="form-group">
-                    <input name="uploaded-file" type="file" class="form-control" id="upload-file">
+                    <input name="uploaded-file" type="file" class="form-control" id="browse-file">
                 </div>
             </form>
 
@@ -47,7 +49,10 @@
         </div>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
-
+    <script>
+        const csrfToken = `{{ csrf_token() }}`;
+        const fileUploadingRoute = `{{ route('file.store') }}`;
+    </script>
     <script src="{{ asset('app.js') }}"></script>
 </body>
 
