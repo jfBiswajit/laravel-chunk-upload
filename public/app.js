@@ -5,7 +5,6 @@ const resumable = new Resumable({
     query: {
         _token: csrfToken,
     },
-    fileType: ["mp4"],
     chunkSize: 2 * 1024 * 1024,
     headers: {
         Accept: "application/json",
