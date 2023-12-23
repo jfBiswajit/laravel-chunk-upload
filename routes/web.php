@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\FileUploadController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -28,10 +29,6 @@ Route::middleware([
     })->name('dashboard');
 });
 
-Route::get('/file-upload', function() {
-    return view('file-upload');
-});
+Route::get('/file-upload', [FileUploadController::class, 'create']);
 
-Route::post('/file-upload', function(Request $request) {
-    dd($request->all());
-})->name('file.store');
+Route::post('/file-upload', [FileUploadController::class, 'store'])->name('file.store');
