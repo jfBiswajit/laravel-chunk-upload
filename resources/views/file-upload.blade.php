@@ -37,13 +37,13 @@
             {{-- !INFO: Progress bar --}}
             <div class="progress mt-2">
                 <div class="progress-bar progress-bar-striped bg-success progress-bar-animated" role="progressbar"
-                    style="width: 90%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">90%</div>
+                    style="width: 0%" aria-valuemin="0" aria-valuemax="100">0%</div>
             </div>
 
             {{-- !INFO: Show video preview --}}
-            <div class="card mt-5">
+            <div class="card mt-5" id="video-container">
                 <video class="embed-responsive embed-responsive-16by9" controls>
-                    <source src="http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4" type="video/mp4">
+                    <source id="video-preview" src="http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4" type="video/mp4">
                 </video>
             </div>
         </div>

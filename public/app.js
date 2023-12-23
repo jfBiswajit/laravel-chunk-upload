@@ -22,44 +22,55 @@ resumable.on("fileAdded", function (file) {
     resumable.upload();
 });
 
+// !INFO: Show progress bar on update
 resumable.on("fileProgress", function (file) {
     updateProgress(Math.floor(file.progress() * 100));
 });
+
+// !SUCCESS: File Uploaded
 resumable.on("fileSuccess", function (file, response) {
     response = JSON.parse(response);
-    if (response.mime_type.includes("image")) {
-        $("#imagePreview")
-            .attr("src", response.path + "/" + response.name)
-            .show();
-    }
     if (response.mime_type.includes("video")) {
-        $("#videoPreview")
-            .attr("src", response.path + "/" + response.name)
-            .show();
+        showVideoPerview();
     }
-    $(".card-footer").show();
 });
+
+// !WARN: Handle Error
 resumable.on("fileError", function (file, response) {
     alert("file uploading error.");
 });
 
+// !INFO: Helper Function
 const progress = $(".progress");
+const videoContainer = $("#video-container");
+
+hideProgress();
+hideVideoPerview();
 
 function showProgress() {
-    progress.find(".progress-bar").css("width", "0%");
-    progress.find(".progress-bar").html("0%");
-    progress.find(".progress-bar").removeClass("bg-success");
     progress.show();
+}
+
+function showVideoPerview() {
+    videoContainer.show();
+    $("#video-preview")
+        .attr("src", response.path + "/" + response.name)
+        .show();
+}
+
+function hideVideoPerview() {
+    videoContainer.hide();
+}
+
+function hideProgress() {
+    progress.hide();
 }
 
 function updateProgress(value) {
     progress.find(".progress-bar").css("width", `${value}%`);
     progress.find(".progress-bar").html(`${value}%`);
-    if (value === 100) {
-        progress.find(".progress-bar").addClass("bg-success");
-    }
-}
 
-function hideProgress() {
-    progress.hide();
+    if (value == 100) {
+        hideProgress();
+    }
 }
