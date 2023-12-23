@@ -27,12 +27,10 @@
             <h4 class="text-center font-great-vibes">Get Chunky, Upload Happy</h4>
 
             {{-- !INFO: Select file --}}
-            <form">
-                @csrf
-                <div class="form-group">
-                    <input name="uploaded-file" type="file" class="form-control" id="browse-file">
-                </div>
-            </form>
+            @csrf
+            <div class="form-group">
+                <input name="uploaded-file" type="file" class="form-control" id="browse-file">
+            </div>
 
             {{-- !INFO: Progress bar --}}
             <div class="progress mt-2">
@@ -41,10 +39,9 @@
             </div>
 
             {{-- !INFO: Show video preview --}}
-            <div class="card mt-5" id="video-container">
-                <video class="embed-responsive embed-responsive-16by9" controls>
-                    <source id="video-preview" src="http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4" type="video/mp4">
-                </video>
+            <div class="mt-5">
+                <video id="video-preview" src="" controls
+                    style="width: 100%; height: auto; display: none"></video>
             </div>
         </div>
     </div>

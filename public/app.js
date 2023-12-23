@@ -45,7 +45,6 @@ const progress = $(".progress");
 const videoContainer = $("#video-container");
 
 hideProgress();
-hideVideoPerview();
 
 function showProgress() {
     progress.show();
@@ -56,10 +55,6 @@ function showVideoPerview() {
     $("#video-preview")
         .attr("src", response.path + "/" + response.name)
         .show();
-}
-
-function hideVideoPerview() {
-    videoContainer.hide();
 }
 
 function hideProgress() {
