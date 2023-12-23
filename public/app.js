@@ -42,7 +42,8 @@ resumable.on("fileSuccess", function (file, response) {
 resumable.on("fileError", function (file, response) {
     alert("file uploading error.");
 });
-let progress = $(".progress");
+
+const progress = $(".progress");
 
 function showProgress() {
     progress.find(".progress-bar").css("width", "0%");
