@@ -5,7 +5,7 @@ const resumable = new Resumable({
     query: {
         _token: csrfToken,
     },
-    chunkSize: 2 * 1024 * 1024,
+    chunkSize: 4 * 1024 * 1024,
     headers: {
         Accept: "application/json",
     },
@@ -38,7 +38,7 @@ resumable.on("fileSuccess", function (file, response) {
 
 // !WARN: Handle Error
 resumable.on("fileError", function (file, response) {
-    alert("file uploading error.");
+    $("#error-alert").show();
 });
 
 // !INFO: Helper Function
@@ -73,5 +73,6 @@ function updateProgress(value) {
 
     if (value == 100) {
         hideProgress();
+        $("#success-alert").show();
     }
 }

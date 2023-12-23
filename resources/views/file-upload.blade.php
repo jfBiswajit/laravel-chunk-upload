@@ -44,6 +44,16 @@
                 </tr>
             </table>
 
+            {{-- !INFO: Success alert --}}
+            <div class="alert alert-success mt-2" style="display: none" id='success-alert' role="alert">
+                File successfully uploaded!
+            </div>
+
+            {{-- !INFO: Failed alert --}}
+            <div class="alert alert-danger mt-2" style="display: none" id='error-alert' role="alert">
+                Failed to upload!
+            </div>
+
             {{-- !INFO: Progress bar --}}
             <div class="progress mt-2">
                 <div class="progress-bar progress-bar-striped bg-success progress-bar-animated" role="progressbar"
