@@ -19,6 +19,7 @@ resumable.assignBrowse(browseFile[0]);
 // !INFO: Assign Event
 resumable.on("fileAdded", function (file) {
     showProgress();
+    showFileInfoContainer(file);
     resumable.upload();
 });
 
@@ -48,6 +49,12 @@ hideProgress();
 
 function showProgress() {
     progress.show();
+}
+
+function showFileInfoContainer(file) {
+    $("#file-info-container").show();
+    $("#file-name").html(file.fileName);
+    $("#file-size").html(`${(file.size / (1024 * 1024)).toFixed(2)} MB`);
 }
 
 function showVideoPerview(response) {

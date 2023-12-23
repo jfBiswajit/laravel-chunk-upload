@@ -32,6 +32,18 @@
                 <input name="uploaded-file" type="file" class="form-control" id="browse-file">
             </div>
 
+            {{-- !INFO: File Info --}}
+            <table class="table table-bordered mt-2" style="display: none" id="file-info-container">
+                <tr>
+                    <td><b>File Name</b></td>
+                    <td id="file-name"></td>
+                </tr>
+                <tr>
+                    <td><b>File Size</b></td>
+                    <td id="file-size"></td>
+                </tr>
+            </table>
+
             {{-- !INFO: Progress bar --}}
             <div class="progress mt-2">
                 <div class="progress-bar progress-bar-striped bg-success progress-bar-animated" role="progressbar"
@@ -40,8 +52,7 @@
 
             {{-- !INFO: Show video preview --}}
             <div class="mt-5">
-                <video id="video-preview" controls
-                    style="width: 100%; height: auto; display: none"></video>
+                <video id="video-preview" controls style="width: 100%; height: auto; display: none"></video>
             </div>
         </div>
     </div>
