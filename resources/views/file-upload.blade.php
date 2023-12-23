@@ -40,7 +40,7 @@
 
             {{-- !INFO: Show video preview --}}
             <div class="mt-5">
-                <video id="video-preview" src="" controls
+                <video id="video-preview" controls
                     style="width: 100%; height: auto; display: none"></video>
             </div>
         </div>
