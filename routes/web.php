@@ -30,5 +30,4 @@ Route::middleware([
 });
 
 Route::get('/file-upload', [FileUploadController::class, 'create']);
-
 Route::post('/file-upload', [FileUploadController::class, 'store'])->name('file.store');
