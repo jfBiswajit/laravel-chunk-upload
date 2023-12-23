@@ -31,7 +31,7 @@ resumable.on("fileProgress", function (file) {
 resumable.on("fileSuccess", function (file, response) {
     response = JSON.parse(response);
     if (response.mime_type.includes("video")) {
-        showVideoPerview();
+        showVideoPerview(response);
     }
 });
 
@@ -50,8 +50,7 @@ function showProgress() {
     progress.show();
 }
 
-function showVideoPerview() {
-    videoContainer.show();
+function showVideoPerview(response) {
     $("#video-preview")
         .attr("src", response.path + "/" + response.name)
         .show();
